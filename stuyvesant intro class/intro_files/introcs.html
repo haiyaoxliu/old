@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>IntroCS2</title>
+        <style type="text/css">
+            body {
+                background-color: #FFFFFF;
+                font-family: verdana;
+            }
+            .dropbtn {
+                background-color: lightblue;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                min-width: 128px;
+            }
+            .dropbtn:hover {
+                background-color: skyblue;
+            }
+            .dcontent {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 280px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+            .dcontent a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            .dcontent  a:hover {
+                background-color: #f1f1f1;
+                font-style:italic;
+            }
+            .menuCell:hover .dcontent {
+                display: block;
+            }
+            .menuCell {
+                position: relative;
+                display: inline-block;
+            }
+            h1 {
+                text-align: center;
+            }
+            #table, #pic {
+                display: none;
+            }
+            #table:target {
+                display: block;
+            }
+            #pic:target {
+                display: block;
+            }
+        </style>
+        <script>
+            var vanish = function(tag) {
+                var element = document.getElementById(tag);
+                element.style.display = 'none';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>I'm a title!</h1>
+        <table>
+            <tr>
+                <div class="menuCell">
+                    <div class="dropbtn">this is a dropdown menu</div>
+                    <div class="dcontent">
+                        <a href="#">an unlinkable link</a>
+                        <a href="#">another one</a>
+                        <a href="#">
+                            <p>a paragraph... <br>
+                            and a second line of text...
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="menuCell">
+                    <div class="dropbtn">some clickable things</div>
+                    <div class="dcontent">
+                        <a href="#table">a table</a>
+                        <a href="#pic">a photo</a>
+                        <a href="https://www.youtube.com/watch?v=ETNoPqYAIPI">nirvana? what? i'm a link.</a>
+                    </div>
+                </div>
+            </tr>
+            <table id="table" border="1">
+                <tr>
+                    <td>An ugly table cell</td>
+                    <td>and another</td>
+                    <td>here's a third</td>
+                </tr>
+                <tr>
+                    <td>row 2 of this ugly hidden table</td>
+                    <td><a href="#" onclick="vanish('table')">vanish forever with this unstyled link</a></td>
+                    <td>!!!</td>
+                </tr>
+            </table>
+            <div id="pic">
+                <img src="http://www.slicemaker.com/kindeditor/attached/image/20140112/20140112152566496649.jpg">
+            </div>
+        </table>
+    </body>
+</html>

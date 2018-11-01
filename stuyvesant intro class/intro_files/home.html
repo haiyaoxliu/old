@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>IntroCS2</title>
+        <style type="text/css">
+            body {
+                background-image: url(http://movieboozer.com/wp-content/uploads/2015/05/my-neighbor-totoro-main-review.jpg);
+                font-family: verdana;
+            }
+            .dropbtn {
+                background-color: lightblue;
+                color: white;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                min-width: 128px;
+            }
+            .hoverbtn {
+                background-color: white;
+                color: black;
+                padding: 16px;
+                font-size: 16px;
+                border: none;
+                opacity: 0.5;
+            }
+            .dropbtn:hover {
+                background-color: skyblue;
+            }
+            .dcontent {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 280px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+            .dcontent a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            .dcontent  a:hover {
+                background-color: #f1f1f1;
+                font-style:italic;
+            }
+            .menuCell:hover .dcontent {
+                display: block;
+            }
+            .menuCell {
+                position: fixed;
+                top: 0;
+                display: inline-block;
+                opacity: 0.7;
+            }
+            .hcell:hover .dcontent {
+                display: block;
+            }
+            .hcell {
+                position: fixed;
+                display: inline-block;
+            }
+            #one {
+                top: 270px;
+                left: 540px;
+            }
+            #two {
+                top: 500px;
+                left: 50px;
+            }
+            #three {
+                top: 800px;
+                left: 630px;
+            }
+            #four {
+                top: 450px;
+                left: 1330px;
+            }
+            #five {
+                top: 850px;
+                left: 980px;
+            }
+            fieldset {
+                border: 1px solid lightgreen;
+                background-color: lightgreen;
+                box-shadow: 0 0 5px 10px lightgreen;
+                opacity: 0.5;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+            legend {
+                border: 1px solid green;
+                background-color: green;
+                box-shadow: 0 0 5px 10px green;
+                margin-left: 1em;
+                padding: 0.2em 0.8em;
+            }
+            .cell2 {
+                padding: 0.2em 0.8em;
+            }
+            .title {
+                position: absolute;
+                top: 40px;
+                text-align: center;
+                padding: 0.2em 0.8em;
+                width: 150px;
+                border: 1px solid black;
+            }
+            td {
+                padding: 0.2em 0.8em;
+                width: 133px;
+            }
+        </style>
+        <script>
+            var vanish = function(tag) {
+                var element = document.getElementById(tag);
+                element.style.display = 'none';
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <div class="menuCell">
+                        <div class="dropbtn">python</div>
+                        <div class="dcontent">
+                            <a href="8queens.txt">8 queens script</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="menuCell">
+                        <div class="dropbtn">links</div>
+                        <div class="dcontent">
+                            <a href="https://wiki.python.org/moin/ProblemSets">beginner python problems</a>
+                            <a href="http://www.w3resource.com/javascript-exercises/">beginner javascript problems</a>
+                            <a href="http://ep.yimg.com/ty/cdn/paulgraham/jmc.ps">Paul Graham's 'The Roots of Lisp'</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="menuCell">
+                        <div class="dropbtn">pictures</div>
+                        <div class="dcontent">
+                            <a href="http://movieboozer.com/wp-content/uploads/2015/05/my-neighbor-totoro-main-review.jpg">background image</a>
+                            <a href="http://img14.deviantart.net/3ed5/i/2015/140/1/d/totoro_march_by_inveeous-d8u4rmr.png">alternate background</a>
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg">sample mandelbrot image</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="hcell" id="one">
+            <div class="hoverbtn">?</div>
+            <div class="dcontent">
+                Eyesight:
+                My vision is quite bad, and it has been ever since middle school.
+                The massive workload and the long periods of time staring at a computer screen were probably the main contributing factors.
+            </div>
+        </div>
+        <div class="hcell" id="two">
+            <div class="hoverbtn">?</div>
+            <div class="dcontent">
+                Camping:
+                Going into the woods and spending time outside the city, alone, is one of my favorite ways to relax.
+                I also love mountain biking, but mostly it's the fresh air and environment that are much better than in the city.
+            </div>
+        </div>
+        <div class="hcell" id="three">
+            <div class="hoverbtn">?</div>
+            <div class="dcontent">
+                Running:
+                Running is the only sport I'm good at, and since I don't have enough time to commit to any teams, I only practice on the weekends,
+                running in a nearby park.
+            </div>
+        </div>
+        <div class="hcell" id="four">
+            <div class="hoverbtn">?</div>
+            <div class="dcontent">
+                blue is my favorite color
+            </div>
+        </div>
+        <div class="hcell" id="five">
+            <div class="hoverbtn">?</div>
+            <div class="dcontent">
+                Other than biking, I also enjoy kayaking and rafting whenever I go camping.
+            </div>
+        </div>
+        <fieldset>
+            <legend>
+                Home
+            </legend>
+            <table>
+                <tr class="s">
+                    <td>Name:</td>
+                    <td class="cell2">Haiyao</td>
+                </tr>
+                <tr class="s">
+                    <td>Grade:</td>
+                    <td class="cell2">10</td>
+                </tr>
+                <tr>
+                    <td>Class:</td>
+                    <td class="cell2">Intro to CS 2</td>
+                </tr>
+                <tr>
+                    <td>Period:</td>
+                    <td class="cell2">8</td>
+                </tr>
+            </table>
+        </fieldset>
+    </body>
+</html>

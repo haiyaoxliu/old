@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>get scores</title>
+    </head>
+    <body>
+        <form method='GET' action='flex.py'>
+            <p> Category to get scores from: <br>
+                <input type='radio' name='stype' value='3' checked>Reading
+                <input type='radio' name='stype' value='4'>Math
+                <input type='radio' name='stype' value='5'>Writing
+                <input type='radio' name='stype' value='6'>Everything
+            </p>
+            <p> How many scores to get:
+                <input type='number' name='numscores' value='5'>
+            </p>
+            <p> What kind of scores to get:
+                <input type='radio' name='horl' value='True' checked>Highest scores
+                <input type='radio' name='horl' value='False'>Lowest Scores
+            </p>
+            <input type='submit' value='Retrieve Scores'>
+        </form>
+    </body>
+</html>
