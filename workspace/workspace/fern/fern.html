@@ -1,0 +1,51 @@
+<!doctype html>
+<div>
+  <input id="x" type="range" min="0" max="100" value="50" step="0.1" oninput="update(this.value, 'scale_x')" />
+  <div id="scale_x">scale_x: 50</div>
+  <input id="y" type="range" min="0" max="100" value="40" step="0.1" oninput="update(this.value, 'scale_y')" />
+  <div id="scale_y">scale_y: 40</div>
+  <input id="t" type="range" min="0" max="50000" value="10000" step="1000" oninput="update(this.value, 'iterations')" />
+  <div id="iterations">iterations: 10000</div>
+  <input id="s_x" type="range" min="0" max="1" value="0" step="0.01" oninput="update(this.value, 'stem_x')" />
+  <div id="stem_x">stem_x: 0</div>
+  <input id="s_y" type="range" min="0" max="1" value="0.16" step="0.01" oninput="update(this.value, 'stem_y')" />
+  <div id="stem_y">stem_y: 0.16</div>
+</div>
+<canvas type="canvas" width="600" height="1000"></canvas>
+<script>
+  var canvas = document.getElementById(canvas);
+  var cx = document.querySelector("canvas").getContext("2d");
+  cx.fillStyle = "black";
+  var update = function(num, par) {
+    var iterations = document.getElementById('t').value;
+    var scale_x = document.getElementById('x').value;
+    var scale_y = document.getElementById('y').value;
+    var stem_x = document.getElementById('s_x').value;
+    var stem_y = document.getElementById('s_y').value;
+    document.getElementById(par).innerHTML = par + ": " + num;
+    fern(0, 0, iterations, scale_x, scale_y, stem_x, stem_y);
+  };
+  var fern = function(x, y, iterations, scale_x, scale_y, stem_x, stem_y) {
+    cx.clearRect(0,0,600,1000);
+    for(var i = 0; i < iterations; i++) {
+      var a = x;
+      var b = y;
+      var r = Math.random();
+      cx.fillRect(scale_x*x + 200,scale_y*y+100,1,1);
+      if(r <= 0.01) {
+        x = stem_x;
+        y = stem_y * b;
+      } else if(r <= 0.08) {
+        x = 0.2 * a - 0.26 * b;
+        y = 0.23 * a + 0.22 * b + 1.6;
+      } else if(r <= 0.15) {
+        x = -0.15 * a + 0.28 * b;
+        y = 0.26 * a + 0.24 * b + 0.44;
+      } else {
+        x = 0.85 * a + 0.04 * b;
+        y = -0.04 * a + 0.85 * b + 1.6;
+      }
+    }
+  };
+  fern(0,0,10000,50,40,0,0.16);
+</script>

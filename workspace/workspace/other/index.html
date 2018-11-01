@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE> Javascript </TITLE>
+</HEAD>
+<BODY>
+<h2>Ordering Numbers</h2>
+
+<script language="Javascript">
+// Hello in Javascript
+
+
+// display prompt box that ask for name and 
+// store result in a variable called who
+var num = window.prompt("What is your name");
+
+// display prompt box that ask for favorite color and 
+// store result in a variable called favcolor
+//var favcolor = window.prompt("What is your favorite color");
+
+var items = num.split(' ');
+
+
+items.sort(
+    function compare(a,b) {
+        return b-a;
+});
+
+for (var i = 0; i < items.length; i++) {
+     //document.write(items[i] + "<br>");
+     console.log(items[i])
+}
+
+</script>
+
+
+</BODY>
+</HTML>
